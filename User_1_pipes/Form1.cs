@@ -26,7 +26,6 @@ namespace LabOS_11_User_1_sockets
             pipeServer.WaitForConnection();
 
             InitTimer();
-
         }
 
         private Timer timer;
