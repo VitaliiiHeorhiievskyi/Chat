@@ -25,16 +25,16 @@ namespace LabOS_11_User_1
         {
             InitializeComponent();
 
-            // отримуємо адреси для запуску сокету
+            //отримуємо адреси для запуску сокету
             ipPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
 
-            // створюємо сокет
+            //створюємо сокет
             listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            // пов'язуємо сокет з локальною точкою, за якою прийматимемо дані
+            //пов'язуємо сокет з локальною точкою, за якою прийматимемо дані
             listenSocket.Bind(ipPoint);
 
-            // починаємо прослуховування
+            //починаємо прослуховування
             listenSocket.Listen(10);
             InitTimer();
         }
