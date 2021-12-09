@@ -20,9 +20,9 @@ namespace LabOS_11_User_2
         {
             InitializeComponent();
 
-            // адрес и порт сервера, к которому будем подключаться
-            int port = 8005; // порт сервера
-            string address = "127.0.0.1"; // адрес сервера
+            // the address and port of the server to which we will connect
+            int port = 8005; // port of the server
+            string address = "127.0.0.1";  // server address
 
             try
             {
@@ -30,7 +30,7 @@ namespace LabOS_11_User_2
 
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(ipPoint);
-                // подключаемся к удаленному хосту
+                // connect to a remote host
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace LabOS_11_User_2
         {
             timer = new Timer();
             timer.Tick += new EventHandler(timer1_Tick);
-            timer.Interval = 100; // in miliseconds
+            timer.Interval = 100; // in milliseconds
             timer.Start();
         }
 
@@ -57,10 +57,10 @@ namespace LabOS_11_User_2
 
         public void GetMessage()
         {
-            // получаем ответ
-            byte[] data = new byte[256]; // буфер для ответа
+            // get response
+            byte[] data = new byte[256]; // response buffer
             StringBuilder builder = new StringBuilder();
-            int bytes = 0; // количество полученных байт
+            int bytes = 0; // the number of bytes received
 
             if (socket.Available == 0)
                 return;
