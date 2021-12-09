@@ -95,8 +95,7 @@ namespace LabOS_11_User_1_sockets
             {
                 Console.WriteLine("ERROR: {0}", ex.Message);
             }
-            pipeServer =
-                new NamedPipeServerStream("Pipe", PipeDirection.InOut, 1, PipeTransmissionMode.Byte);
+            pipeServer = new NamedPipeServerStream("Pipe", PipeDirection.InOut, 1, PipeTransmissionMode.Byte);
             pipeServer.WaitForConnection();
         }
     }
