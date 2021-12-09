@@ -25,16 +25,16 @@ namespace LabOS_11_User_1
         {
             InitializeComponent();
 
-            // получаем адреса для запуска сокета
+            // отримуємо адреси для запуску сокету
             ipPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
 
-            // создаем сокет
+            // створюємо сокет
             listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            // связываем сокет с локальной точкой, по которой будем принимать данные
+            // пов'язуємо сокет з локальною точкою, за якою прийматимемо дані
             listenSocket.Bind(ipPoint);
 
-            // начинаем прослушивание
+            // починаємо прослуховування
             listenSocket.Listen(10);
             InitTimer();
         }
@@ -59,8 +59,8 @@ namespace LabOS_11_User_1
                 return;
 
             StringBuilder builder = new StringBuilder();
-            int bytes = 0; // количество полученных байтов
-            byte[] data = new byte[256]; // буфер для получаемых данных
+            int bytes = 0; //кількість отриманих байтів
+            byte[] data = new byte[256]; // буфер для даних
             
             if (handler.Available == 0)
                 return;
@@ -82,9 +82,9 @@ namespace LabOS_11_User_1
                     flag = true;
                 }    
 
-                byte[] data = new byte[256]; // буфер для получаемых данных
+                byte[] data = new byte[256]; // буфер для отриманих даних
 
-                // отправляем ответ
+                // надсилаємо відповідь
                 string message = textBox_Message.Text;
 
                 textBox_Chat.Text += "User_1: " + message;
