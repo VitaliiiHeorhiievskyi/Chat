@@ -97,7 +97,7 @@ namespace LabOS_11_User_2_sockets
             {
                 Console.WriteLine("ERROR: {0}", ex.Message);
             }
-            //pipeServer.Disconnect();
+            
             pipeClient = new NamedPipeClientStream(".", "Pipe", PipeDirection.InOut);
             System.Threading.Thread.Sleep(100);
             pipeClient.Connect();
